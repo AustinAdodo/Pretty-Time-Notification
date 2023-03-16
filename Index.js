@@ -1,21 +1,37 @@
-function dateTimeNotification(date = "dd-mm-yy") {
-  let DateArray = date.includes(".")
-    ? date.split(".")
-    : date.includes("-")
-    ? date.split("-")
-    : date.includes("/")
-    ? date.split("/")
-    : date.split(" ");
+const { time } = require("console");
+console.log(new Date().toLocaleTimeString);
+
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+function dateTimeNotification(datetime = "19-02-23 2:03") {
+  let date1 = datetime.split(" ")[0];
+  const now = new Date();
+  let time1 = datetime.split(" ")[1];
+  //let date = readline() || date1;
+  let min = time1.split(":")[1];
+  let hr = time1.split(":")[0];
+  let DateArray = date1.includes(".")
+    ? date1.split(".")
+    : date1.includes("-")
+    ? date1.split("-")
+    : date1.includes("/")
+    ? date1.split("/")
+    : date1.split("''")
+    ? date1.split("''")
+    : date1.split(" ");
   //let ComparedDateFormat = new Date();
   let a = "";
   let result = "";
-  let hold = 0;
-  let digits = 0;
   let hold2 = 0;
-  digits = document.getElementById("totaltimetowords").value;
+  let digits = readline();
+  let dateDifference = now.getDate() - parseInt(DateArray[0]);
+  let timeDifference = parseInt(now.toLocaleTimeString()) - parseInt();
 
-  switch (digits <= 3600 * 24 * 7 + 1) {
-    case digits < 60:
+  switch (dateDifference) {
+    case digits == 0:
       function seconds(param = 0) {
         a = param == 1 ? param + " sec." : param + " secs.";
         return a;
@@ -83,5 +99,6 @@ function dateTimeNotification(date = "dd-mm-yy") {
       result = day(digits);
       break;
   }
-  document.getElementById("totaltimetowordsResult").value = result;
+  return result;
 }
+module.exports = dateTimeNotification;
