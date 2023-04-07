@@ -1,10 +1,11 @@
-const { time } = require("console");
-console.log(new Date().toLocaleTimeString);
+//const { time } = require("console");
 
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+// const readline = require("readline").createInterface({
+
+  console.log(new Date().toLocaleTimeString);
+//   input: process.stdin,
+//   output: process.stdout,
+// });
 
 function dateTimeNotification(datetime = "19-02-23 2:03") {
   let date1 = datetime.split(" ")[0];
@@ -101,4 +102,5 @@ function dateTimeNotification(datetime = "19-02-23 2:03") {
   }
   return result;
 }
+
 module.exports = dateTimeNotification;
