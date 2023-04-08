@@ -1,38 +1,32 @@
-//const { time } = require("console");
+// console.log(`${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`);
 
-// const readline = require("readline").createInterface({
-
-  console.log(new Date().toLocaleTimeString);
-//   input: process.stdin,
-//   output: process.stdout,
-// });
-
-function dateTimeNotification(datetime = "19-02-23 2:03") {
-  let date1 = datetime.split(" ")[0];
+function dateTimeNotification(datetime = "2023-02-19 2:03:34") {
+  let datepart = datetime.split(" ")[0];
+  let timepart = datetime.split(" ")[1];
+  let Datepart = new Date(datepart);
+  let min = timepart.split(":")[1];
+  let hr = timepart.split(":")[0];
   const now = new Date();
-  let time1 = datetime.split(" ")[1];
-  //let date = readline() || date1;
-  let min = time1.split(":")[1];
-  let hr = time1.split(":")[0];
-  let DateArray = date1.includes(".")
-    ? date1.split(".")
-    : date1.includes("-")
-    ? date1.split("-")
-    : date1.includes("/")
-    ? date1.split("/")
-    : date1.split("''")
-    ? date1.split("''")
-    : date1.split(" ");
-  //let ComparedDateFormat = new Date();
+  // let DateArray = datepart.includes(".")
+  //   ? datepart.split(".")
+  //   : datepart.includes("-")
+  //   ? datepart.split("-")
+  //   : datepart.includes("/")
+  //   ? datepart.split("/")
+  //   : datepart.split(" ");
   let a = "";
   let result = "";
   let hold2 = 0;
-  let digits = readline();
-  let dateDifference = now.getDate() - parseInt(DateArray[0]);
+  let digits = datepart;
+  // retrieve the date part of the datetime input and subtract.
+  let currentDate = new Date(new Date().toLocaleDateString()).getTime()
+  let dateDifference = Math.floor((currentDate - Datepart.getTime())/ 86400000); //24hrs =  86400000ms
+  console.log(Math.abs(dateDifference));
+  // retrieve the time part of the datetime input.
   let timeDifference = parseInt(now.toLocaleTimeString()) - parseInt();
 
   switch (dateDifference) {
-    case digits == 0:
+    case 0:
       function seconds(param = 0) {
         a = param == 1 ? param + " sec." : param + " secs.";
         return a;
@@ -103,4 +97,5 @@ function dateTimeNotification(datetime = "19-02-23 2:03") {
   return result;
 }
 
+dateTimeNotification();
 module.exports = dateTimeNotification;
