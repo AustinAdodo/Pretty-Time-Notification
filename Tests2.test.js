@@ -1,4 +1,4 @@
-jest.mock("readline.js");
+jest.mock('../__mocks__/readline.js');
 const chai = require("chai");
 const assert = chai.assert;
 chai.config.truncateThreshold = 0;
