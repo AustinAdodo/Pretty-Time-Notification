@@ -4,7 +4,6 @@ const notification = require("./Index.js");
 //add to package.json  "scripts": { "test": "jest"};  Run: npm run test || npm run test --Tests.test.js
 
 const DaytimeKVP = new Map();
-DaytimeKVP.set("Less than a second", "12-03-2023 5:24");
 DaytimeKVP.set("A few minutes ago", "12-03-2023 5:24");
 DaytimeKVP.set("A few hours ago", "12-03-2023 5:24");
 DaytimeKVP.set("Within 24 hours ago", "12-03-2023 5:24");
