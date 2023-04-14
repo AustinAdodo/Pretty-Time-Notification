@@ -1,5 +1,5 @@
 // console.log(`${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`);
-//examine flat maps.
+//examine flat maps. Introduce web sockets and event loops...
 
 function dateTimeNotification(datetime = "2023-02-19 2:03:34") {
   let datepart = datetime.split(" ")[0];
